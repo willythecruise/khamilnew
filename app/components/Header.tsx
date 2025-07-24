@@ -24,7 +24,7 @@ export default function Header() {
     >
       {/* Logo */}
       <Link href="/" className="flex items-center select-none">
-        <Image src="/images/logo.png" alt="Karima Hill Logo" width={400} height={120} style={{ maxHeight: 120, width: 'auto', height: 'auto' }} priority />
+        <img src="/images/logo.png" alt="Karima Hill Logo" style={{ maxHeight: 120, width: 'auto', height: 'auto' }} className="sm:w-[400px] sm:h-[120px] w-[180px] h-[54px]" />
       </Link>
       {/* Desktop Navigation */}
       <div className="hidden md:flex gap-7 md:gap-10 text-lg md:text-xl items-center">

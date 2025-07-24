@@ -123,7 +123,7 @@ export default function Home() {
       >
         <PatternHeroBackground />
         <AnimatedHeroBackground />
-        <div className="relative z-30 flex flex-col items-center w-full px-4">
+        <div className="sm:relative sm:z-30 flex flex-col items-center w-full px-4">
           <h1 className="h1 select-none tracking-wider text-center drop-shadow-lg w-full" style={{ textAlign: 'center' }}>
             {typedTitle}
             <span className="blinking-cursor" style={{ color: 'var(--sovereign-gold)', fontWeight: 200 }}>{typedTitle.length < fullTitle.length ? '|' : ''}</span>

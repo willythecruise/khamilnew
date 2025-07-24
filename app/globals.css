@@ -1,26 +1,185 @@
 @import "tailwindcss";
 
+/* === Brand Color Palette === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --velvet-black: #000000;
+  --sovereign-gold: #D4AF37;
+  --ivory-whisper: #F9F6EF;
+  --background: var(--velvet-black);
+  --foreground: var(--ivory-whisper);
 }
+
+/* === Font Imports (Google Fonts or Local) === */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;700&family=Belleza&display=swap');
+
+/*
+  If you have Orpheus Pro, Canela, Canopee, or Arboria as local fonts, add @font-face here.
+  Example:
+  @font-face {
+    font-family: 'Orpheus Pro';
+    src: url('/fonts/OrpheusPro-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+*/
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-header: 'Helevitica Neue';
+  --font-body: 'Helevitica Neue'
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--velvet-black);
+    --foreground: var(--ivory-whisper);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+  margin: 0;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  line-height: 1.08;
+  color: var(--sovereign-gold);
+  margin-bottom: 0.7em;
+  text-transform: uppercase;
+}
+
+h2, .h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  color: var(--sovereign-gold);
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+h3, .h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: var(--ivory-whisper);
+  margin-bottom: 0.4em;
+}
+
+h4, .h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: var(--ivory-whisper);
+  margin-bottom: 0.3em;
+}
+
+.header-font {
+  font-family: var(--font-header);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sovereign-gold);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.luxury-block {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.18rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.7;
+  color: var(--ivory-whisper);
+  margin-bottom: 1.5em;
+}
+
+.luxury-section {
+  transition: box-shadow 0.3s;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.luxury-section:hover {
+  box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.12);
+}
+.luxury-img-container {
+  background: linear-gradient(135deg, #0D0D0D 60%, #D4AF37 100%);
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 600px) {
+  h1, .h1 { font-size: 2.1rem; }
+  h2, .h2 { font-size: 1.3rem; }
+  .luxury-block { font-size: 1.01rem; }
+}
+
+a {
+  color: var(--sovereign-gold);
+  text-decoration: none !important;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--ivory-whisper);
+  text-decoration: none !important;
+}
+
+::selection {
+  background: var(--sovereign-gold);
+  color: var(--velvet-black);
+}
+
+/* Pulse animation for tagline */
+.animate-pulse-slow {
+  animation: pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Cinematic fade-in for landing page blocks */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+.fade-up-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.blinking-cursor {
+  animation: blink-cursor 1s steps(2, start) infinite;
+}
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

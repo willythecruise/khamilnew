@@ -23,7 +23,7 @@ export default function Header() {
       style={{ boxShadow: "0 2px 16px 0 rgba(0,0,0,0.08)" }}
     >
       {/* Logo */}
-      <Link href="/" className="flex items-center select-none">
+      <Link href="/" className="hidden md:flex items-center select-none">
         <img src="/images/logo.png" alt="Karima Hill Logo" style={{ maxHeight: 120, width: 'auto', height: 'auto' }} className="sm:w-[400px] sm:h-[120px] w-[180px] h-[54px]" />
       </Link>
       {/* Desktop Navigation */}
@@ -60,7 +60,7 @@ export default function Header() {
         aria-hidden={!sidebarOpen}
       >
         <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--sovereign-gold)]">
-          <Image src="/images/logo.png" alt="Karima Hill Logo" width={120} height={36} style={{ maxHeight: 36, width: 'auto', height: 'auto' }} priority />
+          <Image src="/images/logo.png" alt="Karima Hill Logo" width={120} height={36} style={{ maxHeight: 36, width: 'auto', height: 'auto' }} priority className="hidden" />
           <button
             className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-[var(--sovereign-gold)]"
             onClick={() => setSidebarOpen(false)}

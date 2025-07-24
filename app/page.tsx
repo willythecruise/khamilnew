@@ -118,13 +118,14 @@ export default function Home() {
     <div className="min-h-screen flex flex-col items-center bg-[var(--velvet-black)] text-[var(--ivory-whisper)] relative">
       {/* Hero Section: Minimalist, Cinematic */}
       <header
-        className={`relative flex flex-col items-center w-full overflow-hidden transition-opacity duration-1000 ${heroVisible ? 'opacity-100' : 'opacity-0'} h-screen md:justify-center justify-start pt-32 md:pt-0`}
+        className={`relative flex flex-col items-center w-full overflow-hidden transition-opacity duration-1000 ${heroVisible ? 'opacity-100' : 'opacity-0'} h-[340px] md:h-screen md:justify-center justify-start pt-24 md:pt-0`}
         style={{ zIndex: 0 }}
       >
         <PatternHeroBackground />
         <AnimatedHeroBackground />
         <div className="sm:relative sm:z-30 flex flex-col items-center w-full px-4">
           {/* Only show the logo on md+ screens */}
+          {/* The logo is not rendered here, so nothing to hide */}
           <h1 className="h1 select-none tracking-wider text-center drop-shadow-lg w-full mt-0 md:mt-0" style={{ textAlign: 'center' }}>
             {typedTitle}
             <span className="blinking-cursor" style={{ color: 'var(--sovereign-gold)', fontWeight: 200 }}>{typedTitle.length < fullTitle.length ? '|' : ''}</span>

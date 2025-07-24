@@ -123,15 +123,15 @@ export default function Home() {
       >
         <PatternHeroBackground />
         <AnimatedHeroBackground />
-        <div className="relative z-30 flex flex-col items-center w-full">
-          <h1 className="h1 select-none tracking-wider text-center drop-shadow-lg">
+        <div className="relative z-30 flex flex-col items-center w-full px-4">
+          <h1 className="h1 select-none tracking-wider text-center drop-shadow-lg w-full" style={{ textAlign: 'center' }}>
             {typedTitle}
             <span className="blinking-cursor" style={{ color: 'var(--sovereign-gold)', fontWeight: 200 }}>{typedTitle.length < fullTitle.length ? '|' : ''}</span>
           </h1>
           {showSubtitle && (
             <div
               className={`luxury-block text-center animate-pulse-slow tracking-tighter mt-2 text-2xl md:text-3xl transition-opacity duration-1000 ${subtitleVisible ? 'opacity-100' : 'opacity-0'}`}
-              style={{ color: 'var(--sovereign-gold)' }}
+              style={{ color: 'var(--sovereign-gold)', textAlign: 'center' }}
             >
               The sacred war room for those who remember why they came.
             </div>
